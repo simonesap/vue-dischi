@@ -1,0 +1,92 @@
+@import './variabili.scss';
+
+/* Container */
+@mixin container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Reset-list */
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+/* Display-flex + Space-between + Aign-itmes-center */
+@mixin flexBetweenAlign {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Display-flex + Space-between */
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Display-flex + Align-items-center + justify-content-center */
+@mixin flexDefault {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Display-flex + Align-items-center */
+@mixin flexDefault-2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Display-flex + Flex-direction-row */
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Display-flex + Flex-direction-row + Align-items-center */
+@mixin flexRowAlign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Display-flex + Flex-direction-row + Align-items-center + wrap-nowrap */
+@mixin flexRowAlignNoWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Display-flex + Flex-direction-row + Align-items-center + wrap-wrap */
+@mixin flexRowAlignWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Display-flex + Flex-direction-column */
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reset-css */
+@mixin reset-css {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Text-align => left - center - right */
+@mixin text-align($alignPosition){
+    text-align: #{$alignPosition};
+}
+
+/* Text-decoration-none */
+@mixin textDecorationNone {
+    text-decoration: none;
+}

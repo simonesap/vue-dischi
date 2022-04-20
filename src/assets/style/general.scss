@@ -1,0 +1,70 @@
+@import './variabili.scss';
+@import './mixin.scss';
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container-default {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Padding */
+.p-y-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.p-x-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Background */
+.bg-custom-blue {
+    background-color: $dark-blue;
+}
+
+/* Height */
+.h-10-vh {
+    height: 10vh;
+}
+
+.h-20-vh {
+    height: 20vh;
+}
+
+.h-50-vh {
+    height: 50vh;
+}
+
+.h-90-vh {
+    height: 90vh;
+}
+
+/* Display */
+.d_flex {
+    display: flex;
+}
+
+.d_none {
+    display: none;
+}
+
+/* Flex */
+.align_center {
+    align-items: center;
+}
+
+.justfy_center {
+    justify-content: center;
+}
+
+.justfy_between {
+    justify-content: space-between;
+}
+
