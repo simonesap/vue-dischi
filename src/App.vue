@@ -1,18 +1,18 @@
 <template>
 
   <div>
-    
-    <header>
 
-      <HeaderComp/>
-      
-    </header>
+      <header>
 
-    <main>
+        <HeaderComp/>
 
-      <MainComp/>
+      </header>
 
-    </main>
+      <main>
+
+        <MainComp/>
+
+      </main>
 
   </div>
 
@@ -34,6 +34,11 @@ export default {
 
 <style lang="scss">
 @import './assets/style/general.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&display=swap');
+
+  body {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+  }
 
 
 

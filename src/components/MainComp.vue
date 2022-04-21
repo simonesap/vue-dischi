@@ -1,10 +1,11 @@
 <template>
 
-    <div id="bodyMain" class="h-90-vh ">  
+    <div id="bodyMain" class="h-90-vh">  
       
-      <div class="container-default">
+      <div id="library" class="container-default">
 
         <CardsComp
+          class="p-20"
           v-for="(element, index) in albumsLibrary"
           :key="index"
           :image="element.poster"
@@ -21,30 +22,36 @@
 </template>
 
 <script>
+import axios from 'axios'
 import CardsComp from './CardsComp.vue'
-import axios from 'axios';
+
 
 export default {
   name: 'MainComp',
-  components: {
-    CardsComp,
-  },
+  
   data() {
     return {
       albumsLibrary: [],
     }
   },
+
+  components: {
+    CardsComp,
+  },
+  
   created() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then( (res)  => {
-      console.log( res.data )
-      this.albumsLibrary = res.data;
+      console.log( res.data.response )
+      this.albumsLibrary = res.data.response;
+      console.log(this.albumsLibrary);
     }
     )
     .catch( (error) => {
           console.log( error )
       })
   },
+
 }
 </script>
 
@@ -53,6 +60,10 @@ export default {
 
    #bodyMain {
      background: $dark-blue-dark;
+   }
+
+   #library {
+     @include flexRowAlignWrap;
    }
 
 </style>

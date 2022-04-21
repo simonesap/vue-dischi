@@ -1,7 +1,5 @@
 # vue-dischi
 
-# vue-cli-rick-and-morty
-
 # 1° Creare il progetto con Vue cli
 Dopo aver creato la repository vuota su github, la cloniamo sul pc e apriamo lacartella con vs code.
 Utilizzando il terminale nella cartella del progetto il comando Node:
