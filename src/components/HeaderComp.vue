@@ -34,7 +34,39 @@ export default {
   components: {
     SelectComp,
     SearchBar,
-  }
+  },
+
+  props: {
+    author: String,
+    genre: String,
+    image: String,
+    title: String,
+    year: String,
+  },
+
+  data() {
+    return {
+      dataLibrary: [],
+    }
+  },
+
+  computed: {
+    // filterFunction() {
+      // qui metto la funzione che filtra il vecchio array con il nuovo array dataLibrary 
+    // }
+  },
+
+  created() {
+    
+  },
+
+  methods: {
+    searchSelect( select ) {
+      // Il parametro select in questo caso sarebbe la variabile value creata nel figlio
+      this.dataLibrary = select;
+      
+    }
+  },
 }
 </script>
 

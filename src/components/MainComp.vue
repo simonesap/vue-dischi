@@ -1,55 +1,34 @@
 <template>
 
-    <div id="bodyMain" class="h-90-vh">  
-
-      <div id="library" class="container-default">
-
-        <CardsComp
-          class="p-20"
-          v-for="(element, index) in albumsLibrary"
-          :key="index"
-          :image="element.poster"
-          :author="element.author"
-          :genre="element.genre"
-          :title="element.title"
-          :year="element.year"
-        />
-
-      </div>
-
-    </div>
+        <div id="cont">
+          
+          <img :src="image" alt="Foto album">
+          <div class="list author">{{author}}</div>
+          <div class="list">{{title}}</div>
+          <div class="list">{{genre}}</div>
+          <div class="list">{{year}}</div>
+            
+        </div>
 
 </template>
 
 <script>
-import axios from 'axios'
-import CardsComp from './CardsComp.vue'
 
 
 export default {
   name: 'MainComp',
-  
-  data() {
-    return {
-      albumsLibrary: [],
-    }
+
+  props: {
+    author: String,
+    genre: String,
+    image: String,
+    title: String,
+    year: String,
   },
 
   components: {
-    CardsComp,
   },
   
-  created() {
-    axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-    .then( (res)  => {
-      console.log( res.data.response )
-      this.albumsLibrary = res.data.response;
-    }
-    )
-    .catch( (error) => {
-          console.log( error )
-      })
-  },
 
 }
 </script>
@@ -57,12 +36,33 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/general.scss';
 
-   #bodyMain {
-     background: $dark-blue-dark;
-   }
+  img {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+    }
 
-   #library {
-     @include flexRowWrap;
-   }
+    .list {
+      margin: 0 auto;
+      padding: 5px;
+      
+    }
+
+    #cont {
+      vertical-align: middle;
+      width: 160px;
+      color: white;
+      background-color: $dark-blue;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .author {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 5px;
+    }
 
 </style>

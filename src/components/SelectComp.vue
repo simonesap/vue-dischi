@@ -7,7 +7,8 @@
         <select class="p_10 bg-custom-dark-blue b-rounded text_white b-none" 
                 name="" 
                 id=""
-                @click.prevent="$emit('selectSearch', option.value)"
+                v-model="value"
+                @change.prevent="$emit('selectSearch', value)"
                 >
             <optgroup label="Genre:">
                 <option value="All">All</option>
@@ -28,6 +29,11 @@
 export default {
   name: 'SelectComp',
   components: {
+  },
+  data() {
+      return {
+          value: '',
+      }
   }
 }
 </script>

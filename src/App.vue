@@ -4,13 +4,34 @@
 
       <header class="container_default">
 
-        <HeaderComp/>
+        <HeaderComp
+          v-for="(element, index) in albumsLibrary"
+          :key="index"
+          :image="element.poster"
+          :author="element.author"
+          :genre="element.genre"
+          :title="element.title"
+          :year="element.year"
+        />
 
       </header>
 
-      <main>
+      <main id="bodyMain" class="h-90-vh">
 
-        <MainComp/>
+        <div id="library" class="container-default">
+
+          <MainComp
+            class="p-20"
+            v-for="(element, index) in albumsLibrary"
+            :key="index"
+            :image="element.poster"
+            :author="element.author"
+            :genre="element.genre"
+            :title="element.title"
+            :year="element.year"
+          />
+
+         </div>
 
       </main>
 
@@ -22,13 +43,34 @@
 <script>
 import HeaderComp from './components/HeaderComp.vue';
 import MainComp from './components/MainComp.vue';
+import axios from 'axios';
 
 export default {
   name: 'App',
+
   components: {
     HeaderComp,
     MainComp,
-  }
+  },
+
+  data() {
+    return {
+      albumsLibrary: [],
+    }
+  },
+
+  created() {
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+    .then( (res)  => {
+      console.log( res.data.response )
+      this.albumsLibrary = res.data.response;
+    }
+    )
+    .catch( (error) => {
+          console.log( error )
+      })
+  },
+
 }
 </script>
 
@@ -39,6 +81,14 @@ export default {
   body {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
   }
+
+  #bodyMain {
+     background: $dark-blue-dark;
+   }
+
+   #library {
+     @include flexRowWrap;
+   }
 
 
 
