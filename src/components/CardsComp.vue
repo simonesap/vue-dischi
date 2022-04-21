@@ -31,8 +31,8 @@ export default {
 @import '../assets/style/general.scss';
 
     img {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       margin: 0 auto;
     }
 

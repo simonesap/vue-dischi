@@ -45,6 +45,13 @@
     flex-direction: row;
 }
 
+/* Display-flex + Flex-direction-row + wrap */
+@mixin flexRowWrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* Display-flex + Flex-direction-row + Align-items-center */
 @mixin flexRowAlign {
     display: flex;

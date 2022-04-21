@@ -1,7 +1,7 @@
 <template>
 
     <div id="bodyMain" class="h-90-vh">  
-      
+
       <div id="library" class="container-default">
 
         <CardsComp
@@ -44,7 +44,6 @@ export default {
     .then( (res)  => {
       console.log( res.data.response )
       this.albumsLibrary = res.data.response;
-      console.log(this.albumsLibrary);
     }
     )
     .catch( (error) => {
@@ -63,7 +62,7 @@ export default {
    }
 
    #library {
-     @include flexRowAlignWrap;
+     @include flexRowWrap;
    }
 
 </style>

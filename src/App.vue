@@ -2,7 +2,7 @@
 
   <div>
 
-      <header>
+      <header class="container_default">
 
         <HeaderComp/>
 

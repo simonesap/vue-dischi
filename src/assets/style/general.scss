@@ -15,6 +15,10 @@ body {
 }
 
 /* Padding */
+.p_10 {
+    padding: 10px;
+}
+
 .p-20 {
     padding: 20px;
 }
@@ -36,6 +40,15 @@ body {
 /* Background */
 .bg-custom-blue {
     background-color: $dark-blue;
+}
+
+.bg-custom-dark-blue {
+    background-color: $dark-blue-dark;
+}
+
+/* Color */
+.text_white {
+    color: white;
 }
 
 /* Height */
@@ -73,7 +86,7 @@ body {
     justify-content: center;
 }
 
-.justfy_between {
+.justify_between {
     justify-content: space-between;
 }
 
@@ -83,4 +96,17 @@ body {
 
 .flex_row {
     flex-direction: row;
+}
+
+/* Border */
+.b-rounded {
+    border-radius: 20px;
+}
+
+.b-1-w {
+    border: 1px solid white;
+}
+
+.b-none {
+    border: none;
 }
